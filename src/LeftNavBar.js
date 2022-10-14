@@ -6,33 +6,42 @@ import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNone
 import HomeIcon from '@mui/icons-material/Home';
 import NotificationsIcon from '@mui/icons-material/Notifications';
  import LeftBarItem from './LeftBarItem';
+
 export default function LeftNavBar(){
-    const[clicked,setClicked] = React.useState("false")
-    const leftItems = [
+ 
+    const leftItemsData = [
         {id:Home,value: {
             HomeOutlinedIcon ,
             HomeIcon
-        }
+        },
+        on:true
     },
     {id:NotificationsIcon, value:{NotificationsNoneOutlinedIcon,NotificationsIcon
-    }}
+    }, on:false}
 
     ]
+    const[leftItems,setLeftItems] = React.useState(leftItemsData)
 
-    
 
-    function handleClick(){
-        setClicked(!clicked)
+    const itemsElts = leftItems.map(item => (
+          <LeftBarItem id={item.id} value={item.value} on={item.on} toggle={() => toggle(square.id)}/>
+
+    ))
+       
+
+    function toggle(id) {
+        setLeftItems(prevLeftItem => {
+            return prevLeftItem.map((item) => {
+                return item.id === id ? {...item, on: !item.on} : item
+            })
+        })
     }
 
 
 
     return <div>
    <nav>
-    <LeftBarItem onClick={handleClick}
-     switchIcon={clicked? <HomeOutlinedIcon /> : <HomeOutlinedIcon />}
-     
-    />
+    <itemsElts />
      
 
    </nav>
