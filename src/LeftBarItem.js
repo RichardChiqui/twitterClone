@@ -4,10 +4,13 @@ export default function LeftBarItem(props){
 
 
 
+
+
 return(
 <div>
+    {props.value.homeClicked}
     
-{props.on? props.value[0]:props.value[1]}
+
 </div>
 
 

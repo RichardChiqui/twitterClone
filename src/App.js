@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+
+import Home from './Home';
 
 function App() {
   return (
-    <div className="App">
-      <HomeOutlinedIcon />
+    <div>
+      <Home />
     </div>
   );
 }
