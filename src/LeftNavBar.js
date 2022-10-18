@@ -17,32 +17,32 @@ export default function LeftNavBar(){
  
     const leftItemsData = [
         {key:"Home", 
-         value: {"clicked" : <HomeIcon />,
-                  "notClicked": <HomeOutlinedIcon />
+         value: {"clicked" : <HomeIcon  style={{ fontSize: "35px" }}  />,
+                  "notClicked": <HomeOutlinedIcon style={{ fontSize: "35px" }} />
                 },
-         on:false,
+         on:true,
          text:"Home"
 
     }   ,
 
     {key:"Notification", 
-        value:{"clicked": <NotificationsIcon />,
-            "notClicked" : <NotificationsNoneOutlinedIcon />
+        value:{"clicked": <NotificationsIcon style={{ fontSize: "35px" }} />,
+            "notClicked" : <NotificationsNoneOutlinedIcon style={{ fontSize: "35px" }}/>
              }, 
     on:false,
     text:"Notification"
 },
      {key:"Mail",
-      value:{"clicked":<MailIcon />,
-              "notClicked": <MailOutlinedIcon />
+      value:{"clicked":<MailIcon style={{ fontSize: "35px" }}/>,
+              "notClicked": <MailOutlinedIcon style={{ fontSize: "35px" }}/>
 
       },
       on:false,
       text:"Mail"
      },
      {key:"BookMark",
-       value:{"clicked": <BookmarkIcon />,
-               "notClicked" : <BookmarkBorderOutlinedIcon />
+       value:{"clicked": <BookmarkIcon style={{ fontSize: "35px" }}/>,
+               "notClicked" : <BookmarkBorderOutlinedIcon style={{ fontSize: "35px" }}/>
 
        },
        on:false,
@@ -53,8 +53,8 @@ export default function LeftNavBar(){
      {
         key:"Profile",
         value: {
-            "clicked": <PersonIcon />,
-            "notClicked" : <PersonOutlineOutlinedIcon />
+            "clicked": <PersonIcon style={{ fontSize: "35px" }}/>,
+            "notClicked" : <PersonOutlineOutlinedIcon style={{ fontSize: "35px" }}/>
         },
         on:false,
         text:"Profile"
@@ -71,12 +71,12 @@ export default function LeftNavBar(){
           <LeftBarItem key={item.key} value={item.value} on={item.on} toggle={() => toggle(item.key)} text={item.text}/>
 
     ))
-       
+    // !item.on
 
     function toggle(key) {
         setLeftItems(prevLeftItem => {
             return prevLeftItem.map((item) => {
-                return item.key === key ? {...item, on: !item.on} : item
+                return item.key === key ? {...item, on:item.on? item.on:!item.on } : {...item, on:false}
             })
         })
     }
@@ -90,6 +90,9 @@ export default function LeftNavBar(){
    
    
    {itemsElts}
+
+   <button type="button" className="tweet-btn">Tweet </button>
+
      
 
    
