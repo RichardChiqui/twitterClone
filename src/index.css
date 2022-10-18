@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 code {
@@ -12,7 +13,33 @@ code {
     monospace;
 }
 
-.nav-section{
-  height: 3vh;
-  background-color: red;
+.left-section{
+  display: flex;
+  flex-direction: column;
+  
+ 
+  height: 100vh;
+  width: 33%;
+  
+ 
+}
+
+.left-section img{
+  width: 35px;
+  height: 35px;
+  margin-left: 45px;
+ 
+
+}
+
+.left-item{
+  display: flex;
+  align-items: center;
+  
+  padding:20px;
+}
+.left-item h1{
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 15px;
 }

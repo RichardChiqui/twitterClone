@@ -2,27 +2,65 @@ import React from 'react';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
+import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 import HomeIcon from '@mui/icons-material/Home';
 import NotificationsIcon from '@mui/icons-material/Notifications';
  import LeftBarItem from './LeftBarItem';
+ import MailIcon from '@mui/icons-material/Mail';
+ import BookmarkIcon from '@mui/icons-material/Bookmark';
+ import PersonIcon from '@mui/icons-material/Person';
 
 export default function LeftNavBar(){
  
     const leftItemsData = [
         {key:"Home", 
-         value: {"homeClicked" : <HomeIcon />,
-                  "homeNotClicked": <HomeOutlinedIcon />
+         value: {"clicked" : <HomeIcon />,
+                  "notClicked": <HomeOutlinedIcon />
                 },
-         on:false
-    }    ,
+         on:false,
+         text:"Home"
+
+    }   ,
 
     {key:"Notification", 
-        value:{"notiClicked": <NotificationsNoneOutlinedIcon />,
-            "notiNotClicked" : <NotificationsIcon />
+        value:{"clicked": <NotificationsIcon />,
+            "notClicked" : <NotificationsNoneOutlinedIcon />
              }, 
-    on:false
-}
+    on:false,
+    text:"Notification"
+},
+     {key:"Mail",
+      value:{"clicked":<MailIcon />,
+              "notClicked": <MailOutlinedIcon />
+
+      },
+      on:false,
+      text:"Mail"
+     },
+     {key:"BookMark",
+       value:{"clicked": <BookmarkIcon />,
+               "notClicked" : <BookmarkBorderOutlinedIcon />
+
+       },
+       on:false,
+       text:"BookMark"
+      
+
+     },
+     {
+        key:"Profile",
+        value: {
+            "clicked": <PersonIcon />,
+            "notClicked" : <PersonOutlineOutlinedIcon />
+        },
+        on:false,
+        text:"Profile"
+        
+     }
+
     ]
 
 
@@ -30,7 +68,7 @@ export default function LeftNavBar(){
 
 
     const itemsElts = leftItems.map(item => (
-          <LeftBarItem key={item.key} value={item.value} on={item.on} toggle={() => toggle(item.key)}/>
+          <LeftBarItem key={item.key} value={item.value} on={item.on} toggle={() => toggle(item.key)} text={item.text}/>
 
     ))
        
@@ -47,13 +85,14 @@ export default function LeftNavBar(){
 
 
     return (
-        <div>
-   <nav className="nav-section">
-   hello
+        <div className="left-section">
+            <img src="https://img.icons8.com/color/48/000000/twitter--v1.png"  />
+   
+   
    {itemsElts}
      
 
-   </nav>
+   
     </div>
     )
 
