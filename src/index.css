@@ -128,18 +128,112 @@ body {
   background-color: #1DA1F2;
   width: 20%;
 }
-.enter-btn{
-  width:60px;
-  height: 30px;
-  border-radius: 20px;
+.login-btn{
+  background-color:white;
+  border: 3px solid #1DA1F2;
+  width:550px;
+  height: 45px;
+  border-radius: 25px;
+  margin: 15px;
+  color: #1DA1F2;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
 
 }
 
+.signup-btn{
+  background-color:#1DA1F2;
+  border-style:none;
+  width:550px;
+  height: 45px;
+  border-radius: 25px;
+  margin: 15px;
+  color:white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .login-info{
-  background-color: rebeccapurple;
-  width: 100px;
-  height: 100px;
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+  
+  
+  
+  
+  
+}
+
+.login-container h2{
+  
+  margin-left: 10px;
+  word-wrap: break-word;     
+
+}
+.login-container h1{
+  font-size: 45px;
+  width:550px;
+  word-wrap: break-word;      
+  margin-left: 10px;
+  margin-bottom: 80px;
+  
+
+  
+  
+  
+
+}
+
+.login-container img{
+  width: 65px;
+  height: 65px;
+}
+
+.login-container{
   display: flex;
   flex-direction: column;
+  
+  width: fit-content;
+  height: fit-content;
+
+}
+.login-btns{
+  width: fit-content;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  
+ 
+}
+
+.login{
+  display: flex;
+  flex-direction: row;
+  position: relative
+}
+
+.create-acct-section{
+  height: 800px;
+  width: 750px;
+  border-radius: 20px;
+
+  position: absolute;
+  background-color: red;
+  z-index: 2;
+  
+  margin-top: 150px;
+  margin-left: 600px;
+
+
+
+  
+ 
 }
 
