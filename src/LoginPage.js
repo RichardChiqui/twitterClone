@@ -8,9 +8,9 @@ export default function LoginPage(){
 
     const [show, setShow] = React.useState(false)
 
-    const styles= {display: show? "none":"Block"}
-    const blurStyle = {filter: show? "blur(2px)":"blur(0px)"}
-
+    const styles= {display: show? "block":"none"}
+    const backdrop = {filter: show? "brightness(50%)": "brightness(100%)"}
+console.log(show)
     function createAccount(){
         setShow(!show)
     }
@@ -18,12 +18,15 @@ export default function LoginPage(){
     return(
     
         <div className="login" >
-                <div className="blue-divider" style={blurStyle}> 
-                </div>
-               
+           
 
-<CreatAcctpt1 style={styles}/>
-        <div className="login-info" style={blurStyle}> 
+           
+                <div className="blue-divider" style={backdrop}> 
+                </div>
+                
+
+                <CreatAcctpt1 style={styles}/>
+        <div className="login-info" style={backdrop}> 
             
         <div className="login-container">
         <img src="https://img.icons8.com/color/48/000000/twitter--v1.png"  />

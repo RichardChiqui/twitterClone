@@ -9,6 +9,7 @@ export default function(){
       
 <label for="tweet"></label>
 <input type="text"  className="tweet-input"placeholder="What is Happening?"></input>
+        
         <div className="tweet-options">
             <div className="tweet-imports">
             <GifBoxOutlinedIcon />

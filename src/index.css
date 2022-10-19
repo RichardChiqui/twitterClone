@@ -124,9 +124,9 @@ body {
 
 .blue-divider{
   height: 100vh;
-  
   background-color: #1DA1F2;
   width: 20%;
+  
 }
 .login-btn{
   background-color:white;
@@ -161,12 +161,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
+  
+  
 
-  
-  
-  
-  
-  
   
 }
 
@@ -196,6 +194,8 @@ body {
 }
 
 .login-container{
+  
+ 
   display: flex;
   flex-direction: column;
   
@@ -216,7 +216,9 @@ body {
 .login{
   display: flex;
   flex-direction: row;
-  position: relative
+  position: relative;
+
+
 }
 
 .create-acct-section{
@@ -225,15 +227,40 @@ body {
   border-radius: 20px;
 
   position: absolute;
-  background-color: red;
+ 
   z-index: 2;
   
   margin-top: 150px;
   margin-left: 600px;
+  background-color: white;
+  border: 3px solid grey ;
 
 
+ 
+  
+}
 
+.create-container{
   
  
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+
+ 
+  
+  
+}
+
+.create-input{
+  
+  width: 500px;
+  height: 50px;
+  border-radius: 5px;
+  outline-style: none;
 }
 

@@ -71,7 +71,7 @@ export default function LeftNavBar(){
           <LeftBarItem key={item.key} value={item.value} on={item.on} toggle={() => toggle(item.key)} text={item.text}/>
 
     ))
-    // !item.on
+   
 
     function toggle(key) {
         setLeftItems(prevLeftItem => {
