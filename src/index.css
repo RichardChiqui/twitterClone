@@ -264,3 +264,21 @@ body {
   outline-style: none;
 }
 
+.create-btn{
+  background-color: #1DA1F2;
+  width:500px;
+  height: 40px;
+   
+   border-radius: 33px;
+   border-style: none;
+   color:white;
+   font-size: 20px;
+   margin-top: 15px;
+   cursor: pointer;
+
+}
+
+.create-btn:hover{
+  background-color: #6699cc;
+}
+
