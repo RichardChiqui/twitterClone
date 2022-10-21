@@ -12,28 +12,14 @@ const [username, setUserName] = React.useState({username: ""})
         [name]:value
     }))
 
-  }
-const [usernameData, setUsernameData] = React.useState({
-    method: 'POST',
-    headers:{
-        'Content-Type' : 'application/json'
-    },
-    body: JSON.stringify(username)
-  })
-
-
-  React.useEffect(function(){
-
-     fetch('/http://localhost:3001/api' ,usernameData)
-     .then(res => res.json())
-     .then(data => console.log(data))
-
-  },[])
-
-  
-  
  
 
+  }
+   function allinone(){
+        props.toggle
+        props.handleSubmitFn(username)
+    }
+    
 
     return(
 
@@ -42,7 +28,8 @@ const [usernameData, setUsernameData] = React.useState({
             <input type="text"  
                     className="create-input" 
                     style={blueborder}  
-                    onClick={props.toggle}  
+                    onClick={allinone}
+                    
                     placeholder={props.text}
                     name="username"
                     onChange={handleChange}

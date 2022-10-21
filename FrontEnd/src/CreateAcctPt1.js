@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Link} from 'react-router-dom';
 import useComponentVisible from "./CustomeHooks/useCompVis";
 
 export default function CreatAcctpt1(props){
+    const axios = require('axios');
  
     const inputfield = [{key:"Name", on:false, text: "Name"},{key:"Email",on:false, text:"Email"}]
     const[inputData, setInputData] = React.useState(inputfield)
@@ -11,7 +12,7 @@ export default function CreatAcctpt1(props){
     
 
 const itemsElts = inputData.map(item => (
-    <CreateInputs key={item.key} text={item.text} on={item.on} toggle={() => toggle(item.key)}/>
+    <CreateInputs key={item.key} handleSubmit={())} text={item.text} on={item.on} toggle={() => toggle(item.key)}/>
 
 ))
 
@@ -26,7 +27,20 @@ const itemsElts = inputData.map(item => (
 
 
 
+function handleSubmitFn(username){
 
+    axios.post('/username', {
+        username: username
+    
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+}
 
     return(
 <div className="create-acct-section" style={props.style}>
@@ -36,8 +50,11 @@ const itemsElts = inputData.map(item => (
 
  {itemsElts}
  <Link to="/home">
-    <button type="button" className="create-btn">Next </button>
+    <form onSubmit={handleSubmitFn}>
+        <button type="button" className="create-btn">Next </button>
 
+    </form>
+    
  </Link>
 
  
