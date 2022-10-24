@@ -1,20 +1,26 @@
 import React from "react"
-import CreateInputs from "./CreateInputs"
 import {BrowserRouter as Router, Link} from 'react-router-dom';
-import useComponentVisible from "./CustomeHooks/useCompVis";
+import axios, * as others from 'axios';
+
 
 export default function CreatAcctpt1(props){
-    const axios = require('axios');
+    
  
     const inputfield = [{key:"Name", on:false, text: "Name"},{key:"Email",on:false, text:"Email"}]
     const[inputData, setInputData] = React.useState(inputfield)
+    const [username, setUserName] = React.useState({username: ""})
+    const nameBorder = {border: inputData[0].on? "3px #6699cc solid": "2px lightgrey solid"}
+    const emailBorder = {border: inputData[1].on? "3px #6699cc solid": "2px lightgrey solid"}
+  
+    function handleChange(event){
+    const {name, value} = event.target
+    setUserName(prevname => ({
+       
+        [name]:value
+    }))}
 
     
 
-const itemsElts = inputData.map(item => (
-    <CreateInputs key={item.key} handleSubmit={())} text={item.text} on={item.on} toggle={() => toggle(item.key)}/>
-
-))
 
  function toggle(key){
     
@@ -25,13 +31,10 @@ const itemsElts = inputData.map(item => (
     })
 }
 
-
-
-function handleSubmitFn(username){
+function handleSubmitFn(){
 
     axios.post('/username', {
-        username: username
-    
+        
       })
       .then(function (response) {
         console.log(response);
@@ -39,8 +42,17 @@ function handleSubmitFn(username){
       .catch(function (error) {
         console.log(error);
       });
+    console.log("we in here")
+    //  React.useEffect(()=>{
+
+    //     axios.post('/username')
+    //     .then((res) => console.log(res))
+    //     .catch((err) => console.log(err))
+
+    // })
 
 }
+
 
     return(
 <div className="create-acct-section" style={props.style}>
@@ -48,15 +60,39 @@ function handleSubmitFn(username){
     <div className="create-container"    >
 <h2>Create your account</h2>
 
- {itemsElts}
- <Link to="/home">
-    <form onSubmit={handleSubmitFn}>
-        <button type="button" className="create-btn">Next </button>
+ 
 
-    </form>
+<form >
+            <label for="tweet">Name: </label>
+            <input type="text"  
+                    className="create-input" 
+                    style={nameBorder}  
+                    onClick={() => toggle(inputData[0].key)}
+                    placeholder="Name"
+                    name="username"
+                    onChange={handleChange}>
+                </input> 
+
+                <label for="tweet">Email: </label>
+            <input type="text"  
+                    className="create-input" 
+                    style={emailBorder}  
+                    onClick={() => toggle(inputData[1].key)}
+                    placeholder="Name"
+                    name="username"
+                   >
+                </input> 
+                
+       
+ 
+ {/* <Link to="/home" onClick={handleSubmitFn}> */}
     
- </Link>
+        <button type="button"  onClick={handleSubmitFn}className="create-btn">Next </button>
 
+   
+    
+ {/* </Link> */}
+ </form>
  
      
  

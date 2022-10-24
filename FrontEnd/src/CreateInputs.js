@@ -28,7 +28,7 @@ const [username, setUserName] = React.useState({username: ""})
             <input type="text"  
                     className="create-input" 
                     style={blueborder}  
-                    onClick={allinone}
+                    onClick={props.toggle}
                     
                     placeholder={props.text}
                     name="username"

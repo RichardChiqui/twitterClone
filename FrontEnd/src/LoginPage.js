@@ -1,20 +1,32 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 
 import CreatAcctpt1 from "./CreateAcctPt1";
 
+import axios from "axios";
+
 
 export default function LoginPage(){
+
+    // React.useEffect(()=>{
+
+    //     axios.get('/api')
+    //     .then((res) => console.log(res))
+    //     .catch((err) => console.log(err))
+
+    // })
+
+
 
     const [show, setShow] = React.useState(false)
 
     const styles= {display: show? "block":"none"}
     const backdrop = {filter: show? "brightness(50%)": "brightness(100%)"}
-console.log(show)
+
     function createAccount(){
         setShow(!show)
     }
-    console.log(styles)
+   
     return(
     
         <div className="login" >

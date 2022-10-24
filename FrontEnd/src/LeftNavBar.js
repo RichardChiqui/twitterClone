@@ -6,6 +6,7 @@ import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
+import TagIcon from '@mui/icons-material/Tag';
 import HomeIcon from '@mui/icons-material/Home';
 import NotificationsIcon from '@mui/icons-material/Notifications';
  import LeftBarItem from './LeftBarItem';
@@ -23,7 +24,15 @@ export default function LeftNavBar(){
          on:true,
          text:"Home"
 
-    }   ,
+    }   ,{
+        key:"Explore", 
+         value: {"clicked" : <TagIcon  style={{ fontSize: "35px" }}  />,
+                  "notClicked": <TagIcon style={{ fontSize: "35px" }} />
+                },
+         on:false,
+         text:"Explore"
+
+    },
 
     {key:"Notification", 
         value:{"clicked": <NotificationsIcon style={{ fontSize: "35px" }} />,
@@ -32,13 +41,13 @@ export default function LeftNavBar(){
     on:false,
     text:"Notification"
 },
-     {key:"Mail",
+     {key:"Messages",
       value:{"clicked":<MailIcon style={{ fontSize: "35px" }}/>,
               "notClicked": <MailOutlinedIcon style={{ fontSize: "35px" }}/>
 
       },
       on:false,
-      text:"Mail"
+      text:"Messages"
      },
      {key:"BookMark",
        value:{"clicked": <BookmarkIcon style={{ fontSize: "35px" }}/>,
